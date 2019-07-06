@@ -10,6 +10,9 @@ This function is divided into 2 parts:
 1) For Integer value
 2) For Real Value
 
+Definition: It acts like a factorial function of complex numbers
+
+
 Formula Used to calculate gamma function
 
 T represents Gamman Function
@@ -20,6 +23,9 @@ T represents Gamman Function
   
   T(a) = integration(t^(a-1)*exp(t)) on dt with limits is from 0 to infinity
   
+In general:
+
+T(a+1) = aT(a)
   
 Domain:
 
