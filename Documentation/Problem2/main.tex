@@ -28,33 +28,45 @@ This is a project based on gamma function in which we are making calculator for 
 
 
 
-\section{Formulas Related to Function}
+\section{Related to Function}
+\subsection{Formulas}
 \begin{itemize}
-\item $  \Gamma \left( x \right) = \int\limits_0^\infty {s^{x - 1} e^{ - s} ds} \enspace \forall \enspace Re(x)>0$
-\item $  \Gamma \left( 1/2 \right) = \sqrt{\pi}$
-\item $  n! = n*(n-1)!$
-\item $  \Gamma \left( x \right) = x\Gamma \left( x-1\right) $
-\item $  \Gamma \left( 0 \right) = undefined $
+\item \textbf{Formula1: } $  \Gamma \left( x \right) = \int\limits_0^\infty {s^{x - 1} e^{ - s} ds} \enspace \forall \enspace Re(x)>0$
+\item \textbf{Formula2: } $  \Gamma \left( 1/2 \right) = \sqrt{\pi}$
+\item \textbf{Formula3: } $  n! = n*(n-1)!$
+\item \textbf{Formula4: } $  \Gamma \left( x \right) = x\Gamma \left( x-1\right) $
+\item \textbf{Formula5: } $  \Gamma \left( 0 \right) = undefined $
 \end{itemize}
 
-\section{Domain of Function}
+\subsection{Domain of Function}
 $\forall$ Real numbers excluding all negative integers \\
-$(0, \infty)$
+$(-\infty, \infty) - Z^{-}$
 
-\section{Co domain of Function}
+\subsection{Co domain of Function}
 \begin{itemize}
-\item It ranges from $(1, \infty)$
+\item It ranges from $(-\infty, \infty)$
 \item For positive integers, we returns integer value as normal factorial
 \item For other real numbers, we use integral function.
 \end{itemize}
 
-\section{Input/Output of Function}
+\section{Requirements/Constraints of Function}
+\subsection{Requirements}
 \begin{itemize}
-\item For \textbf{negative input} $\forall x<0 $, \textbf{Function} will return \textbf{undefined} response
-\item For \textbf{$x=0$}, \textbf{Function} will return \textbf{undefined}
-\item For \textbf{$Re(x) > 0$}, \textbf{Function} will return positive real value
+\item \textbf{Req1}: For \textbf{Large input} in positive value, it will return infinity as a language constraint.
+\item \textbf{Req2}: For \textbf{negative input} $\forall x<0 $, \textbf{Function} will return \textbf{undefined} response, keeping in mind input type
+\item \textbf{Req3}: For \textbf{$x=0$}, \textbf{Function} will return \textbf{undefined}, keeping in mind input type
+\item \textbf{Req4}: For \textbf{$Re(x) > 0$}, \textbf{Function} will return positive real value, keeping in mind input type
 \end{itemize}
 
-\section{Risk/Constraints of Gamma Function}
-We cannot \textbf{input} value of \textbf{non negative integers} as well as negative real number
+\subsection{Constraints}
+\begin{itemize}
+\item \textbf{Const1}: For Input, types can be Integer, Double, Float data types
+\item \textbf{Const2}: We cannot \textbf{input} value of \textbf{non negative integers}
+\item \textbf{Const3}: We cannot input the value large number as it will return 
+\end{itemize}
+
+\section{References}
+\begin{itemize}
+\item https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4247832/
+\end{itemize}
 \end{document}
