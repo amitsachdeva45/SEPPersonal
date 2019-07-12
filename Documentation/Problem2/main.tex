@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{comment} % enables the use of multi-line comments (\ifx \fi) 
+\usepackage{fullpage} % changes the margin
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{booktabs} % For formal tables
+\usepackage{listings}
+\begin{document}
+\noindent
+\large\textbf{Software Engineering Process: Problem 2} \hfill \textbf{Amit Sachdeva} 
+
+\normalsize Topic: Functional Requirements of Gamma Function \hfill \textbf{40084627} 
+
+Prof. P. Kamthan \hfill Due Date: 12/July/2019
+
+\section{Introduction} 
+\textbf{Gamma Function: } It is commonly referred as factorial function for complex numbers.\\  It is derived by Daniel Bernoulli.
+
+\section{Overall Description} 
+This is a project based on gamma function in which we are making calculator for gamma value. User can insert any real value and expect real value except on boundary conditions.
+
+\section{Stakeholders} 
+\textbf{Users 1:} This function is mostly used in physics calculations. So, most important stakeholders are scientists for their calculations.
+\newline
+\textbf{Users 2:} This function is also used in basic maths calculations or any analytically field. 
+
+
+
+\section{Formulas Related to Function}
+\begin{itemize}
+\item $  \Gamma \left( x \right) = \int\limits_0^\infty {s^{x - 1} e^{ - s} ds} \enspace \forall \enspace Re(x)>0$
+\item $  \Gamma \left( 1/2 \right) = \sqrt{\pi}$
+\item $  n! = n*(n-1)!$
+\item $  \Gamma \left( x \right) = x\Gamma \left( x-1\right) $
+\item $  \Gamma \left( 0 \right) = undefined $
+\end{itemize}
+
+\section{Domain of Function}
+$\forall$ Real numbers excluding all negative integers \\
+$(0, \infty)$
+
+\section{Co domain of Function}
+\begin{itemize}
+\item It ranges from $(1, \infty)$
+\item For positive integers, we returns integer value as normal factorial
+\item For other real numbers, we use integral function.
+\end{itemize}
+
+\section{Input/Output of Function}
+\begin{itemize}
+\item For \textbf{negative input} $\forall x<0 $, \textbf{Function} will return \textbf{undefined} response
+\item For \textbf{$x=0$}, \textbf{Function} will return \textbf{undefined}
+\item For \textbf{$Re(x) > 0$}, \textbf{Function} will return positive real value
+\end{itemize}
+
+\section{Risk/Constraints of Gamma Function}
+We cannot \textbf{input} value of \textbf{non negative integers} as well as negative real number
+\end{document}
