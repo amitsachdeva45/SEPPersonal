@@ -96,31 +96,32 @@ $[0, \infty)$
 \section{Algorithms}
 \subsection{Pseudo Code 1}
 \subsubsection{Algorithm}
-This algorithm is based on calculating
-1) function yAxisValue(Argument x, Argument s) \{ \newline
-2) \hspace{15pt} Calculate the value using $value = {s^{x - 1} e^{ - s}}$\newline
-3) \hspace{15pt} return value\newline
-4) end \newline
-5) \}  \newline
-6) function gammaFunction(Argument x) \{ \newline
-7) \hspace{15pt} if x $<$ 0\newline
-8) \hspace{35pt} then raise Input Error\newline
-9) \hspace{15pt} if x $>$ 170\newline
-10) \hspace{35pt} then return "Infinity"\newline
-11) \hspace{15pt}Initialize finalData with 0\newline
-12) \hspace{15pt}Set Interval for gap = $10 ^ {-3}$ \newline
-13) \hspace{15pt}while loop i for range(0,Infinity)\newline
-14) \hspace{35pt}Add the finalData by using formula of trapezium using \newline 
-15) \hspace{35pt} \textbf{$1/2*gap*(yAxisValue(i) + yAxisValue(i-gap))$} \newline
-16) \hspace{35pt} increment i with gap value \newline
-17) \hspace{15pt} return finalData\newline
-18) end \newline
-19) \} \newline
-20) \{ \newline
-21) In main function \newline
-22) \hspace{15pt} Take a input of x \newline
-23) \hspace{15pt} Call gammaFunction with input x-1 as a argument \newline
-24) \}
+This algorithm is based on calculating based on using core integral using graph like dividing whole graph in small parts and calculating each part using formula of trapezium ($ 1/2*(base1 + base2)*height $) and combining it at the end.\newline\newline
+function yAxisValue(Argument x, Argument s) \{ \newline
+\indent \indent Calculate the value using $value = {s^{x - 1} e^{ - s}}$\newline
+\indent \indent return value\newline
+end \newline
+\}  \newline
+ function gammaFunction(Argument x) \{ \newline
+\indent \indent if x $<$ 0\newline
+\indent \indent \indent \indent then raise Input Error\newline
+\indent \indent if x $>$ 170\newline
+\indent \indent \indent \indent then return "Infinity"\newline\newline
+\indent \indent Initialize finalData with 0\newline
+\indent \indent Set Interval for gap = $10 ^ {-3}$ \newline\newline
+\indent \indent while loop i for range(0,Infinity)\newline
+\indent \indent \indent \indent Add the finalData by using formula of trapezium using \newline 
+\indent \indent \indent \indent \textbf{$1/2*gap*(yAxisValue(i) + yAxisValue(i-gap))$} \newline
+\indent \indent \indent \indent increment i with gap value \newline
+\indent \indent return finalData\newline
+end \newline
+\} \newline
+\{ \newline
+In main function \newline
+\indent \indent Take a input of x \newline
+\indent \indent Call gammaFunction with input x-1 as a argument \newline
+end\newline
+\}
 \subsubsection{Advantages}
 \begin{itemize}
 \item Get More Precise Values for input as tested with existing results
@@ -132,6 +133,28 @@ This algorithm is based on calculating
 \end{itemize}
 \subsection{Pseudo Code 2}
 \subsubsection{Algorithm}
+This algorithm is based on calculating using pre-calculated values which act as a coefficients, iterating and calculating each values using input and coefficients\newline\newline
+function gammaFunction(Argument x) \{ \newline
+\indent \indent if x$<$0\newline
+\indent \indent \indent \indent then raise Input Error\newline
+\indent \indent if x$>$170\newline
+\indent \indent \indent then return "Infinity"\newline\newline
+\indent \indent declare array of finalArray precalculated values\newline
+\indent \indent$temp = x + constant$\newline
+\indent \indent Calculate temp value using log of temp value\newline
+\indent \indent declare finalValue with value 1\newline\newline
+\indent \indent while loop i for range(0,length of finalArray)\newline
+\indent \indent \indent \indent $finalValue += finalArray[index]/ ++temp$\newline
+\indent \indent return finalValue\newline
+end\newline
+\}\newline
+\{\newline
+In main function\newline
+\indent \indent Take a input of x\newline
+\indent \indent Call gammaFunction with input x-1 as a argument \newline
+end \newline
+\}  \newline
+
 \subsubsection{Advantages}
 \begin{itemize}
 \item We are using constant pre-calculated value which increase the speed of algorithm
