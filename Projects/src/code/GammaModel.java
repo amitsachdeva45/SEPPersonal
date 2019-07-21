@@ -19,14 +19,14 @@ public class GammaModel {
   }
   
   private double integration(double value, double lowerLimit, 
-      double upperLimit, DefinedFunction inbuilt) {
+      double upperLimit) {
     double summation = 0.0;
     for (double index = lowerLimit + CONSTANT_HEIGHT; 
         index < upperLimit; index += CONSTANT_HEIGHT) {
       double differnce = index - lowerLimit;
       if (lowerLimit + differnce  != 0 && lowerLimit + differnce  - CONSTANT_HEIGHT != 0) {
-        summation += (inbuilt.getData(lowerLimit + differnce) 
-           + inbuilt.getData(lowerLimit + differnce - CONSTANT_HEIGHT));
+        summation += (mainOperation(value, lowerLimit + differnce) 
+           + mainOperation(value, lowerLimit + differnce - CONSTANT_HEIGHT));
       }
     }
     summation = (CONSTANT_HEIGHT / 2) * summation;
@@ -37,10 +37,12 @@ public class GammaModel {
     }
   }
   
+  private double mainOperation(double value, double x) {
+    return Math.pow(x, value) * Math.pow(EXPONENT, -x);
+  }
+  
   private double gammaCalculation(double value) {
-    return integration(value, 0, UPPER_BOUND, x -> {
-      return Math.pow(x, value) * Math.pow(EXPONENT, -x);
-    });
+    return integration(value, 0, UPPER_BOUND);
   }
   /**
    * This function is responsible for handling errors and performing gamma function.
