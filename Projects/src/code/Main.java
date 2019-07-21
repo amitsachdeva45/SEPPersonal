@@ -23,6 +23,7 @@ public class Main {
   
   /**
   *  Main function where application will start.
+  *  @param args It is basic format.
   */
   
   public static void main(String[] args) {
