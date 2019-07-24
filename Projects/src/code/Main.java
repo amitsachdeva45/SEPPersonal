@@ -16,7 +16,7 @@ public class Main {
   public Main() {
     GammaModel tempModel = new GammaModel();
     GammaView tempView = new GammaView("Gamma Calculator");
-    tempView.setBasicLayout();
+    tempView.setBasicLayout(1);
     GammaController tempController = new GammaController(tempModel, tempView);
     tempController.startController();
   }

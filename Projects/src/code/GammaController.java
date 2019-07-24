@@ -38,10 +38,10 @@ public class GammaController {
       this.view.setResult("");
       this.view.setHistory("");
       if (result.compareTo("negative") == 0) {
-        this.view.setResult("Negative Input Error");
+        this.view.setResult("Negative input is not allowed.");
         flag = 1;
       } else if (result.compareTo("error") == 0) {
-        this.view.setResult("Wrong Input Type");
+        this.view.setResult("Entered input is not proper real or complex number.");
         flag = 1;
       } else if (result.compareTo("infinity") == 0) {
         this.view.setResult("Infinity");

@@ -12,10 +12,25 @@ public class GammaModel {
   private ArrayList<String[]> historyData;
   private static final double CONSTANT_HEIGHT = 0.001;
   private static final int UPPER_BOUND = 201;
-  private static final double EXPONENT = 2.71828182846;
+  private static double EXPONENT;
   
-  GammaModel() {
+  /**
+   * This is constructor just initializing the historyData. 
+   */
+  public GammaModel() {
     this.historyData = new ArrayList<String[]>();
+    EXPONENT = exponentConstant();
+  }
+  
+  private double exponentConstant() {
+    double sum = 1.0;
+    double ratio = 1;
+    sum = sum + ratio;
+    for (int i = 2; i <= 475; i++) {
+      ratio = ratio * 1 / i;
+      sum +=  ratio;
+    }
+    return sum;
   }
   
   private double integration(double value, double lowerLimit, 
@@ -30,11 +45,7 @@ public class GammaModel {
       }
     }
     summation = (CONSTANT_HEIGHT / 2) * summation;
-    if (value < 19) {
-      return (Math.round(summation * 1000.0) / 1000.0);
-    } else {
-      return summation;
-    }
+    return summation;
   }
   
   private double logarithmFunction(double base, double power) {
@@ -58,7 +69,7 @@ public class GammaModel {
   private double powerFunction(double base, double power) {
     double tempPower;
     double sum;
-    if (base ==   2.71828182846) {
+    if (base ==   EXPONENT) {
       tempPower = power;
       if (tempPower < 0) {
         tempPower = tempPower * -1;
@@ -68,7 +79,7 @@ public class GammaModel {
       double factorial = 1.0;
       double ratio = tempPower;
       sum = sum + ratio;
-      for (int i = 2; i <= 150; i++) {
+      for (int i = 2; i <= 475; i++) {
         ratio = ratio * tempPower / i;
         sum +=  ratio;
       }
@@ -80,17 +91,14 @@ public class GammaModel {
         tempPower = tempPower * -1;
         flag = 1;
       }
-      sum = 0.0;
+      sum = 1.0;
       double multiple = 1.0;
       double factorial = 1.0;
-      for (int i = 0; i <= 150; i++) {
-        if (i == 0 || i == 1) {
-          factorial = 1;
-        } else {
-          factorial = factorial * i;
-        }
-        sum += multiple / factorial;
-        multiple = multiple * tempPower;
+      double ratio = tempPower;
+      sum = sum + ratio;
+      for (int i = 2; i <= 475; i++) {
+        ratio = ratio * tempPower / i;
+        sum +=  ratio;
       }
       if (flag == 1) {
         sum = 1.0 / sum;
@@ -116,28 +124,34 @@ public class GammaModel {
   public String startGamma(String input) {
     String[] storageData = new String[2];
     storageData[0] = input;
-    storageData[1] = "Wrong Input Type";
+    storageData[1] = "Entered input is not proper real or complex number.";
     String output = "error";
     try {
       String[] temp = input.split("\\+");
       double value = Double.valueOf(temp[0].trim());
       if (value < 0) {
-        storageData[1] = "Negative Input Error";
+        storageData[1] = "Negative input is not allowed.";
         output = "negative";
       } else if (value == 0 || value == 1) {
         storageData[1] = "1.0";
         output = "1.0";
-      } else if (value > 60) {
+      } else if (value >= 110) {
         storageData[1] = "Infinity";
         output = "infinity";
       } else {
         value = value - 1;
-        String result = String.valueOf(this.gammaCalculation(value));
+        String result = "0.0";
+        if (value < 18) {
+          result = String.format("%.03f", this.gammaCalculation(value));
+        } else {
+          result = String.valueOf(this.gammaCalculation(value));
+        }
+        
         storageData[1] = result;
         output = result;
       }
     } catch (Exception e) {
-      storageData[1] = "Wrong Input Type";
+      storageData[1] = "Entered input is not proper real or complex number.";
       output = "error";
     }
     this.historyData.add(storageData);

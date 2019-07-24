@@ -34,17 +34,21 @@ public class GammaView {
   JLabel instructions2; 
   JLabel instructions3;
     
-    
-  GammaView(String name) {
+  /**
+   * This is constructor of GammaView for initializing the JFrame.
+   * @param name Heading of the view
+   */
+  public GammaView(String name) {
     this.frame = new JFrame(name);
     this.frame.setBackground(Color.RED);
     this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   }
   /**
    * This function is for setting up the view on JFrame.
+   * @param flag It is used to maintain check if we want to show view or not.
   */
   
-  public void setBasicLayout() {
+  public void setBasicLayout(int flag) {
     this.close = new JButton("Close");
     this.reset = new JButton("Reset");
     this.calculate = new JButton("Calculate");
@@ -55,7 +59,7 @@ public class GammaView {
     this.resultLabel = new JLabel("Result");
     this.headingLabel = new JLabel("Gamma Calculator");
     this.commentLabel = new JLabel("Please enter any real value or complex "
-    + "number in format of a+ib");
+    + "number in format of a+ib. Negative number not allowed");
     this.instructions1 = new JLabel("RESET:     To clear all history data");
     this.instructions2 = new JLabel("CLOSE:     Close the Application");
     this.instructions3 = new JLabel("REFRESH:    Remove the result part");
@@ -77,12 +81,15 @@ public class GammaView {
       void displayInMessage(int flag, FocusEvent e) {
         if (flag == 1) {
           JTextField temp = (JTextField)e.getSource();
-          temp.setText("");
+          if (temp.getText().equals("0.0")) {
+            temp.setText("");  
+          }
+          
         }
       }
     });
     this.calculate.setBounds(425, 65,100,30);
-    this.commentLabel.setBounds(10, 100, 400, 15);
+    this.commentLabel.setBounds(10, 100, 480, 15);
     this.commentLabel.setFont(new Font("Serif",Font.ITALIC,12));
     this.commentLabel.setForeground(Color.GRAY);
 
@@ -137,7 +144,9 @@ public class GammaView {
     this.frame.setSize(550,500);
     this.frame.setLayout(null);
     this.frame.setLocationRelativeTo(null);
-    this.frame.setVisible(true);
+    if (flag == 1) {
+      this.frame.setVisible(true);
+    }
   }
   
   public JButton getClose() {
