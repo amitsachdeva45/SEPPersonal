@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class GammaModel {
   private ArrayList<String[]> historyData;
-  private static final double CONSTANT_HEIGHT = 1E-3;
+  private static final double CONSTANT_HEIGHT = 0.001;
   private static final int UPPER_BOUND = 201;
   private static final double EXPONENT = 2.71828182846;
   
@@ -37,8 +37,71 @@ public class GammaModel {
     }
   }
   
+  private double logarithmFunction(double base, double power) {
+    double sum = 0;
+    double count = 20;
+    if (base <= 0.1) {
+      count = 10000;
+    } else {
+      count = 1000;
+    }
+    double multiple = 1.0;
+    for (int i = 1; i < count; i++) {
+      multiple = multiple * ((base - 1) / (base + 1));
+      if (i % 2 != 0) {
+        sum = sum + multiple / i;
+      }
+    }
+    return 2 * sum * power;  
+  }
+
+  private double powerFunction(double base, double power) {
+    double tempPower;
+    double sum;
+    if (base ==   2.71828182846) {
+      tempPower = power;
+      if (tempPower < 0) {
+        tempPower = tempPower * -1;
+      }
+      sum = 1.0;
+      double multiple = 1.0;
+      double factorial = 1.0;
+      double ratio = tempPower;
+      sum = sum + ratio;
+      for (int i = 2; i <= 150; i++) {
+        ratio = ratio * tempPower / i;
+        sum +=  ratio;
+      }
+      sum = 1.0 / sum;
+    } else {
+      tempPower = logarithmFunction(base,power);
+      int flag = 0;
+      if (tempPower < 0) {
+        tempPower = tempPower * -1;
+        flag = 1;
+      }
+      sum = 0.0;
+      double multiple = 1.0;
+      double factorial = 1.0;
+      for (int i = 0; i <= 150; i++) {
+        if (i == 0 || i == 1) {
+          factorial = 1;
+        } else {
+          factorial = factorial * i;
+        }
+        sum += multiple / factorial;
+        multiple = multiple * tempPower;
+      }
+      if (flag == 1) {
+        sum = 1.0 / sum;
+      }
+    }
+    return sum;
+  }
+  
   private double mainOperation(double value, double x) {
-    return Math.pow(x, value) * Math.pow(EXPONENT, -x);
+    double tempValue = powerFunction(x, value) * powerFunction(EXPONENT, -x);
+    return tempValue;
   }
   
   private double gammaCalculation(double value) {
