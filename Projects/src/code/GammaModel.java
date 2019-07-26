@@ -75,8 +75,6 @@ public class GammaModel {
         tempPower = tempPower * -1;
       }
       sum = 1.0;
-      double multiple = 1.0;
-      double factorial = 1.0;
       double ratio = tempPower;
       sum = sum + ratio;
       for (int i = 2; i <= 475; i++) {
@@ -92,8 +90,6 @@ public class GammaModel {
         flag = 1;
       }
       sum = 1.0;
-      double multiple = 1.0;
-      double factorial = 1.0;
       double ratio = tempPower;
       sum = sum + ratio;
       for (int i = 2; i <= 475; i++) {

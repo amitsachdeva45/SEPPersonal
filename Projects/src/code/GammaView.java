@@ -30,6 +30,7 @@ public class GammaView {
   JLabel resultLabel; 
   JLabel headingLabel; 
   JLabel commentLabel; 
+  JLabel commentLabel1;
   JLabel instructions1; 
   JLabel instructions2; 
   JLabel instructions3;
@@ -59,7 +60,8 @@ public class GammaView {
     this.resultLabel = new JLabel("Result");
     this.headingLabel = new JLabel("Gamma Calculator");
     this.commentLabel = new JLabel("Please enter any real value or complex "
-    + "number in format of a+ib. Negative number not allowed");
+    + "number in format of a+ib. Negative number not allowed.");
+    this.commentLabel1 = new JLabel("For complex number '0 + i9' is allowed. 'i9' is not allowed ");
     this.instructions1 = new JLabel("RESET:     To clear all history data");
     this.instructions2 = new JLabel("CLOSE:     Close the Application");
     this.instructions3 = new JLabel("REFRESH:    Remove the result part");
@@ -89,10 +91,14 @@ public class GammaView {
       }
     });
     this.calculate.setBounds(425, 65,100,30);
-    this.commentLabel.setBounds(10, 100, 480, 15);
-    this.commentLabel.setFont(new Font("Serif",Font.ITALIC,12));
-    this.commentLabel.setForeground(Color.GRAY);
+    this.commentLabel.setBounds(10, 100, 480, 10);
+    this.commentLabel.setFont(new Font("Serif",Font.ITALIC,10));
+    this.commentLabel.setForeground(Color.RED);
 
+    this.commentLabel1.setBounds(10, 112, 480, 10);
+    this.commentLabel1.setFont(new Font("Serif",Font.ITALIC,10));
+    this.commentLabel1.setForeground(Color.RED);
+    
     this.resultLabel.setBounds(5, 125, 100, 30);
     this.resultLabel.setFont(new Font("Serif", Font.BOLD, 20));
     this.resultLabel.setForeground(Color.BLUE);
@@ -132,6 +138,7 @@ public class GammaView {
     this.frame.add(this.inputField);
     this.frame.add(this.calculate);
     this.frame.add(this.commentLabel);
+    this.frame.add(this.commentLabel1);
     this.frame.add(this.resultLabel);
     this.frame.add(this.resultField);
     this.frame.add(this.refresh);

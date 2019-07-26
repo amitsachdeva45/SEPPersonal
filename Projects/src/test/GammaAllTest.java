@@ -9,7 +9,6 @@ import static org.junit.Assert.assertEquals;
 import code.GammaController;
 import code.GammaModel;
 import code.GammaView;
-import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -78,5 +77,24 @@ public class GammaAllTest {
     assertEquals("1.710", gammaModel.startGamma("0.5"));
   }  
   
+  @Test
+  public void testWrongInput1() {
+    assertEquals("error", gammaModel.startGamma("i9"));
+  } 
+  
+  @Test
+  public void testWrongInput2() {
+    assertEquals("error", gammaModel.startGamma("gjhfjjf"));
+  } 
+  
+  @Test
+  public void testComplexNumber1() {
+    assertEquals("1.0", gammaModel.startGamma("0 + i9"));
+  } 
+  
+  @Test
+  public void testComplexNumber2() {
+    assertEquals("120.000", gammaModel.startGamma("6 + i9"));
+  } 
 
 }
