@@ -22,6 +22,57 @@ public class GammaModel {
     EXPONENT = exponentConstant();
   }
   
+  public ArrayList<String[]> getHistoryData() {
+    return this.historyData;
+  }
+
+  public void setHistoryData() {
+    this.historyData = new ArrayList<String[]>();
+  }
+  
+  /**
+   * This function is responsible for handling errors and performing gamma function.
+   * @param input Input by user
+   * @return Result after applying gamma function operation.
+   */
+  
+  public String startGamma(String input) {
+    String[] storageData = new String[2];
+    storageData[0] = input;
+    storageData[1] = "Entered input is not proper real or complex number.";
+    String output = "error";
+    try {
+      String[] temp = input.split("\\+");
+      double value = Double.valueOf(temp[0].trim());
+      if (value < 0) {
+        storageData[1] = "Negative input is not allowed.";
+        output = "negative";
+      } else if (value == 0 || value == 1) {
+        storageData[1] = "1.0";
+        output = "1.0";
+      } else if (value >= 110) {
+        storageData[1] = "Infinity";
+        output = "infinity";
+      } else {
+        value = value - 1;
+        String result = "0.0";
+        if (value < 18) {
+          result = String.format("%.03f", this.gammaCalculation(value));
+        } else {
+          result = String.valueOf(this.gammaCalculation(value));
+        }
+        
+        storageData[1] = result;
+        output = result;
+      }
+    } catch (Exception e) {
+      storageData[1] = "Entered input is not proper real or complex number.";
+      output = "error";
+    }
+    this.historyData.add(storageData);
+    return output;
+  }
+  
   private double exponentConstant() {
     double sum = 1.0;
     double ratio = 1;
@@ -111,56 +162,9 @@ public class GammaModel {
   private double gammaCalculation(double value) {
     return integration(value, 0, UPPER_BOUND);
   }
-  /**
-   * This function is responsible for handling errors and performing gamma function.
-   * @param input Input by user
-   * @return Result after applying gamma function operation.
-   */
   
-  public String startGamma(String input) {
-    String[] storageData = new String[2];
-    storageData[0] = input;
-    storageData[1] = "Entered input is not proper real or complex number.";
-    String output = "error";
-    try {
-      String[] temp = input.split("\\+");
-      double value = Double.valueOf(temp[0].trim());
-      if (value < 0) {
-        storageData[1] = "Negative input is not allowed.";
-        output = "negative";
-      } else if (value == 0 || value == 1) {
-        storageData[1] = "1.0";
-        output = "1.0";
-      } else if (value >= 110) {
-        storageData[1] = "Infinity";
-        output = "infinity";
-      } else {
-        value = value - 1;
-        String result = "0.0";
-        if (value < 18) {
-          result = String.format("%.03f", this.gammaCalculation(value));
-        } else {
-          result = String.valueOf(this.gammaCalculation(value));
-        }
-        
-        storageData[1] = result;
-        output = result;
-      }
-    } catch (Exception e) {
-      storageData[1] = "Entered input is not proper real or complex number.";
-      output = "error";
-    }
-    this.historyData.add(storageData);
-    return output;
-  }
   
-  public ArrayList<String[]> getHistoryData() {
-    return this.historyData;
-  }
 
-  public void setHistoryData() {
-    this.historyData = new ArrayList<String[]>();
-  }
 }
 
 
