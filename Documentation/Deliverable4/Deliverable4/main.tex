@@ -1,59 +1,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Jacobs Landscape Poster
+% Software Engineering Process
 % LaTeX Template
-% Version 1.0 (29/03/13)
-%
-% Created by:
-% Computational Physics and Biophysics Group, Jacobs University
-% https://teamwork.jacobs-university.de:8443/confluence/display/CoPandBiG/LaTeX+Poster
-% 
-% Further modified by:
-% Nathaniel Johnston (nathaniel@njohnston.ca)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% 
-% Masaryk University presentation themes were downloaded from:
-% https://www.overleaf.com/gallery/tagged/muni
-%
-% and ported into Jacobs Landscape Poster by:
-% Jumaidil Awal (ideal1st.here@googlemail.com)
-% 
-% Jacobs Landscape Poster License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-% Masaryk University's fibeamer theme license:
-% Copyright 2015  Vít Novotný <witiko@mail.muni.cz>
-% Faculty of Informatics, Masaryk University (Brno, Czech Republic)
-% under Latex Project Public License
-%
+% Version 1.0 (12/08/2019)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
 
 \documentclass[final]{beamer}
 
 \usepackage[scale=1.24]{beamerposter} % Use the beamerposter package for laying out the poster
 
 %\usetheme{confposter} % Use the confposter theme supplied with this template
-\usetheme[faculty=chemo]{fibeamer} % Uncomment to use Masaryk University's fibeamer theme instead.
+\usetheme[faculty=phil]{fibeamer} % Uncomment to use Masaryk University's fibeamer theme instead.
 
-%\setbeamercolor{block title}{fg=ngreen,bg=white} % Colors of the block titles
-%\setbeamercolor{block body}{fg=black,bg=white} % Colors of the body of blocks
-%\setbeamercolor{block alerted title}{fg=white,bg=dblue!70} % Colors of the highlighted block titles
-%\setbeamercolor{block alerted body}{fg=black,bg=dblue!10} % Colors of the body of highlighted blocks
-% Many more colors are available for use in beamerthemeconfposter.sty
 
-%-----------------------------------------------------------
-% Define the column widths and overall poster size
-% To set effective sepwid, onecolwid and twocolwid values, first choose how many columns you want and how much separation you want between columns
-% In this template, the separation width chosen is 0.024 of the paper width and a 4-column layout
-% onecolwid should therefore be (1-(# of columns+1)*sepwid)/# of columns e.g. (1-(4+1)*0.024)/4 = 0.22
-% Set twocolwid to be (2*onecolwid)+sepwid = 0.464
-% Set threecolwid to be (3*onecolwid)+2*sepwid = 0.708
 
 \newlength{\sepwid}
 \newlength{\onecolwid}
@@ -78,9 +37,9 @@
 
 \title{Poster Presentation: Gamma Function: Team I} % Poster title
 
-\author{Amit Sachdeva} % Author(s)
+\author{Amit Sachdeva, 40084627} % Author(s)
 
-\institute{40084627, Master of Software Engineering, Concordia University} % Institution(s)
+\institute{ Master of Software Engineering, Concordia University} % Institution(s)
 
 %----------------------------------------------------------------------------------------
 
@@ -123,12 +82,7 @@
 
 \begin{exampleblock}{Objectives}
 
-The field of adversarial machine learning is also useful for identification of vulnerabilities in a machine learning approach in presence of adversarial settings
-\begin{itemize}
-\item Illustrate the design cycle of a learning-based pattern recognition system for adversarial tasks.
-\item Performance of pattern classifiers and deep learning algorithms under attack, evaluate their vulnerabilities.
-\item Pattern recognition tasks like object recognition in images, biometric identity recognition, spam and malware detection.
-\end{itemize}
+\small{This project is about the functionality of gamma function as well as proper documentation. User can insert any real value and expect real value except on boundary conditions. Firstly, requirements and assumptions are made for our function and best algorithm is decided out of two different algorithms. Target is not limited to functionality but to improve user experience but keeping in mind about the proper coding style. Code reviewing is also done to get know the weak points. }
 
 \end{exampleblock}
 
@@ -137,14 +91,15 @@ The field of adversarial machine learning is also useful for identification of v
 %----------------------------------------------------------------------------------------
 
 \begin{exampleblock}{Introduction}
-Deep neural networks and \textbf{machine-learning} algorithms are currently used in several applications, ranging from computer vision to computer security.
-Many areas of machine learning are \textbf{adversarial} in nature because they are safety critical, such as autonomous driving. An adversary can be a cyber attacker or malware author attacking the model by causing congestion among users, or may create accidental situations, or may even model expose vulnerabilities in the prediction module by creating undesired situation.  \cite{Smith:2012qr}.
+\small{\textbf{Gamma Function: } It is commonly referred as factorial function for complex numbers. It is derived by Daniel Bernoulli. The gamma function $\Gamma(z)$ is defined for all complex values of z larger than zero. Complex number can be consist of real and imaginary number, like $z = a + i b$ in which a and b can real numbers. A complex number is typically written in the form where sigma a is the real part and it is the imaginary part. \textbf{Range} of the function is $(0,\inf)$ and \textbf{Domain} is from $[0, 109]$}
 \end{exampleblock}
 
 %------------------------------------------------
 
 \begin{figure}
-\includegraphics[width=0.4\linewidth]{img/glogo.png}
+\includegraphics[width=1\linewidth]{img/d4_2.jpg}
+\caption{Gamma Function}
+\label{fig:Gamma Function}
 \end{figure}
 
 %----------------------------------------------------------------------------------------
@@ -163,114 +118,110 @@ Many areas of machine learning are \textbf{adversarial} in nature because they a
 %	MATERIALS
 %----------------------------------------------------------------------------------------
 
-\begin{exampleblock}{Materials}
-
-Pattern classifiers can be significantly vulnerable to well-crafted, sophisticated attacks exploiting knowledge of the learning algorithms. Being increasingly adopted for security and privacy tasks, it is very likely that such techniques will be soon targeted by specific attacks, crafted by skilled attackers. Larger number of potential attack scenarios, respectively referred to as evasion and poisoning attacks.
-
+\begin{exampleblock}{Pseudo code}
+\small{This algorithm is based on calculating based on using core integral using graph like dividing whole graph in small parts and calculating each part using formula of trapezium \textbf{($ 1/2*(base1 + base2)*height $)} and combining it at the end.\newline\newline
+function yAxisValue(Argument x, Argument s) \{ \newline 
+\hspace*{20pt}calculate the value using $value = {s^{x - 1} e^{ - s}}$\newline
+\hspace*{20pt}return value\newline
+end \newline
+\}  \newline
+function gammaFunction (Argument x) \{ \newline
+\hspace*{20pt} if x $<$ 0\newline
+\hspace*{50pt} then raise Negative Input Error\newline
+\hspace*{20pt} if x $>$ 110\newline
+\hspace*{50pt} then return "Infinity"\newline
+\hspace*{20pt} Initialize finalData with 0\newline
+\hspace*{20pt} Set Interval for gap = $10 ^ {-3}$ \newline
+\hspace*{20pt} while loop i for range (0,Infinity)\newline
+\hspace*{50pt} add the finalData by using formula of trapezium using \newline 
+\hspace*{50pt} \textbf{$1/2*gap*(yAxisValue(i) + yAxisValue(i-gap))$} \newline
+\hspace*{50pt} increment i with gap value \newline
+\hspace*{20pt} return finalData\newline
+end \newline
+\} \{ \newline
+In main function \newline
+\hspace*{20pt} Take a input of x \newline
+\hspace*{20pt} Call gammaFunction with input x-1 as a argument \newline
+end
+\}}
 \end{exampleblock}
-\begin{exampleblock}{Mathematical Section}
-
-\textbf{Poisoning attacks} include those systems that exploit feedback from the end users to validate their decisions.PDFRate an online tool for detecting malware in PDF files.
-
-\textbf{Evasion attacks} consist of manipulating input data at test time to cause misclassifications. Which manipulation of malware code to have the corresponding sample undetected.
+\begin{exampleblock}{Requirements and Assumptions}
+\begin{itemize}
+    \small{\item  For \textbf{Large input} in positive real value, it will return infinity $\forall$ values $>$ 110.
+    \item  For \textbf{negative input} $\forall x<0 $, \textbf{Function} will return \textbf{negative input error}.
+    \item  For \textbf{$x=0$}, \textbf{Function} will return \textbf{1}
+    \item  For \textbf{$Re(x) > 0$}, \textbf{Function} will return positive real value, keeping in mind values belongs to real value}
+    \item For invalid string like: any string, or wrong complex number like i9, \textbf{Function} will return \textbf{Wrong input error}
+\end{itemize}
 
 \end{exampleblock}
 %----------------------------------------------------------------------------------------
 
 \end{column} % End of column 2.1
-\begin{column}{\sepwid}\end{column} % Empty spacer column
 
 \begin{column}{\onecolwid}\vspace{-.74in} % The second column within column 2 (column 2.2)
 
-%----------------------------------------------------------------------------------------
-%	METHODS
-%----------------------------------------------------------------------------------------
 
-\begin{exampleblock}{Methods}
+\begin{exampleblock}{Coding Conventions and Additional things}
 
+\small{\textbf{\underline{Coding Convention}}
 \begin{enumerate}
-\item Poisoning (Causative) Attack : Attack on training phase. Attackers attempt to learn, influence, or corrupt the ML model itself.
-\begin{figure}
-\includegraphics[width=1\linewidth]{img/poisoning.png}
-\end{figure}
-\item Evasion (Exploratory) Attack : Attack on testing phase. Do not tamper with ML model, but instead cause it to produce adversary selected outputs.
-\begin{figure}
-\includegraphics[width=1\linewidth]{img/evasion.png}
-\end{figure}
+    \item Methods and variables should be in Camel Case. 
+    \item Class name should be start with capital letter.
+    \item Package should be in capital letter.
+    \item Function length should be less than 30 words.
+    \item Constant should be of capital letters.
 \end{enumerate}
+
+\textbf{\underline{Additional Things}}
+\begin{enumerate}
+    \item \textbf{JUnit 4} For Testing the functionality of project. 
+    \item \textbf{Eclipse} is used as debugger.
+    \item \textbf{Check style} is used to improve code quality.
+    \item \textbf{Java Docs} for documentation and working of methods
+\end{enumerate}}
 
 
 
 
 \end{exampleblock}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{img/d4_1.png}
+\caption{GUI of Gamma Function}
+\label{fig:GUI of Gamma Function}
+\end{figure}
+\begin{exampleblock}{Results}
+\begin{tabular}{|p{5cm}|p{11cm}|p{8cm}|}
 
+ \hline
+ Input & Code output &Real Output\\
+ \hline
+ 6  & 120.000  &  120\\
+ 99  &  8.13936\textbf{E153}  &  9.4268904\textbf{E153}\\
+ 0  & 1.0  &  1\\
+ 3+i9  & 2.000  &  2\\
+ i9  & Wrong Input Error & Error \\
+ -1 & Negative Input Error & Error \\
+ abc & Wrong Input Error & Error\\
+ 120 & Infinity & Infinity \\
+ \hline
+\end{tabular}
+\end{exampleblock}
 %----------------------------------------------------------------------------------------
 
 \end{column} % End of column 2.2
 
 \end{columns} % End of the split of column 2 - any content after this will now take up 2 columns width
 
-%----------------------------------------------------------------------------------------
-%	IMPORTANT RESULT
-%----------------------------------------------------------------------------------------
 
-\begin{alertblock}{Important Result}
-\begin{figure}
-\includegraphics[width=1\linewidth]{img/result.PNG}
-\end{figure}
- Images that can be misclassified by deep-learning algorithms while being only imperceptibly distorted. evasion attacks are thus already a relevant threat in real-world application settings.
-
-\end{alertblock} 
-
-%----------------------------------------------------------------------------------------
 
 \begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column again
 
-\begin{column}{\onecolwid} % The first column within column 2 (column 2.1)
 
-%----------------------------------------------------------------------------------------
-%	MATHEMATICAL SECTION
-%----------------------------------------------------------------------------------------
-
-
-
-%----------------------------------------------------------------------------------------
-
-\end{column} % End of column 2.1
 \begin{column}{\sepwid}\end{column} % Empty spacer column
 
 \begin{column}{\onecolwid} % The second column within column 2 (column 2.2)
 
-%----------------------------------------------------------------------------------------
-%	RESULTS
-%----------------------------------------------------------------------------------------
-
-\begin{exampleblock}{Results}
-
-\begin{figure}
-\includegraphics[width=0.8\linewidth]{img/placeholder.jpg}
-\caption{Figure caption}
-\end{figure}
-
-Nunc tempus venenatis facilisis. Curabitur suscipit consequat eros non porttitor. Sed a massa dolor, id ornare enim:
-
-\begin{table}
-\vspace{2ex}
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\caption{Table caption}
-\end{table}
-
-\end{exampleblock}
-
-%----------------------------------------------------------------------------------------
 
 \end{column} % End of column 2.2
 
@@ -286,70 +237,50 @@ Treatment 3 & 0.0009271 & 0.296 \\
 %	CONCLUSION
 %----------------------------------------------------------------------------------------
 
-\begin{exampleblock}{Conclusion}
+\begin{exampleblock}{Explicit Efforts}
+\small{For this project, GUI is used to increase usability with proper exception handling to increase robustness. To enhance maintainability, Design pattern is used. Even each method has different functionality to decrease dependability. Core method of integration is implemented for gamma function which enhances efficiency and correctness.}
 
-Nunc tempus venenatis facilisis. \textbf{Curabitur suscipit} consequat eros non porttitor. Sed a massa dolor, id ornare enim. Fusce quis massa dictum tortor \textbf{tincidunt mattis}. Donec quam est, lobortis quis pretium at, laoreet scelerisque lacus. Nam quis odio enim, in molestie libero. Vivamus cursus mi at \textit{nulla elementum sollicitudin}.
 
 \end{exampleblock}
 
-%----------------------------------------------------------------------------------------
-%	ADDITIONAL INFORMATION
-%----------------------------------------------------------------------------------------
 
-\begin{exampleblock}{Additional Information}
-
-Maecenas ultricies feugiat velit non mattis. Fusce tempus arcu id ligula varius dictum. 
+\begin{exampleblock}{Suggested Improvements and Conclusion}
+\small{
+\textbf{\underline{Improvements}}
 \begin{itemize}
-\item Curabitur pellentesque dignissim
-\item Eu facilisis est tempus quis
-\item Duis porta consequat lorem
-\item Duis porta consequat lorem
+\item Java docs can be used for test cases to enhance better readability of test cases.
+\item Functions length in few cases can be reduced to 20 to 30 lines to enhance the maintainability.
+\item More arithmetic functions like addition, subtraction can be added to cover all aspects of calculator.
 \end{itemize}
-
+Concluding that, this project has increased the way of handling project along with proper documentation and proper coding style. It also helps in working in a team. Not only that, it also helps to maintain track of working using git, and requirement gathering at initial stage is mandatory.}
 \end{exampleblock}
 
-%----------------------------------------------------------------------------------------
-%	REFERENCES
-%----------------------------------------------------------------------------------------
+
 
 \begin{exampleblock}{References}
 
-\nocite{*} % Insert publications even if they are not cited in the poster
-\small{\bibliographystyle{unsrt}
-\bibliography{sample}\vspace{1cm}}
+\small{\begin{itemize}
+\item  https://www.ncbi.nlm.nih.gov/pmc/articles/PMC 4247832/
+\item https://medium.com/cantors-paradise/the-riemann-hypothesis-explained-fa01c1f75d3f
+\item https://www.quora.com/What-are-the-advantages-of-Eclipse-IDE
+\item https://checkstyle.org/eclipse-cs/
+\item https://www.eclipse.org/forums/index.php/t/206312/
+\end{itemize}}
 \end{exampleblock}
 
-%----------------------------------------------------------------------------------------
-%	ACKNOWLEDGEMENTS
-%----------------------------------------------------------------------------------------
 
-%\setbeamercolor{block title}{fg=red,bg=white} % Change the block title color
-
-%\begin{exampleblock}{Acknowledgements}
-
-%\small{\rmfamily{Nam mollis tristique neque eu luctus. Suspendisse rutrum congue nisi sed convallis. Aenean id neque dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.}} \\
-
-%\end{exampleblock}
-
-%----------------------------------------------------------------------------------------
-%	CONTACT INFORMATION
-%----------------------------------------------------------------------------------------
-
-%\setbeamercolor{block alerted title}{fg=black,bg=norange} % Change the alert block title colors
-%\setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
 
 \begin{block}{Contact Information}
 
-\begin{itemize}
-\item Web: \href{http://ideal1st.com/}{http://ideal1st.com/}
-\item Email: \href{mailto:ideal1st.here@gmail.com}{ideal1st.here@gmail.com}
-\end{itemize}
+\small{\begin{itemize}
+\item Name: Amit Sachdeva
+\item Student Id: 40084627
+\item Github: \url{https://github.com/amitsachdeva45/SEPPersonal/tree/master/Documentation/Deliverable4}
+\item Professor: P. Kamthan
+\end{itemize}}
 
 \end{block}
 
-\begin{tabular}{rr}
-\hspace{0.3\linewidth} & \includegraphics[width=0.5\linewidth]{img/logo.png}
-\end{tabular}
 
 %----------------------------------------------------------------------------------------
 
