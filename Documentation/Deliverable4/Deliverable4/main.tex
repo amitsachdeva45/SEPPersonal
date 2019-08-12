@@ -97,9 +97,15 @@
 %------------------------------------------------
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/d4_2.jpg}
+\includegraphics[width=0.5\linewidth]{img/d4_2.jpg}
 \caption{Gamma Function}
 \label{fig:Gamma Function}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{img/d4_1.png}
+\caption{GUI of Gamma Function}
+\label{fig:GUI of Gamma Function}
 \end{figure}
 
 %----------------------------------------------------------------------------------------
@@ -119,7 +125,7 @@
 %----------------------------------------------------------------------------------------
 
 \begin{exampleblock}{Pseudo code}
-\small{This algorithm is based on calculating based on using core integral using graph like dividing whole graph in small parts and calculating each part using formula of trapezium \textbf{($ 1/2*(base1 + base2)*height $)} and combining it at the end.\newline\newline
+\small{This algorithm is based on calculating based on using core integral using graph like dividing whole graph in small parts and calculating each part using formula of trapezium \textbf{($ 1/2*(base1 + base2)*height $)} and combining it at the end. We can get more precise results using this algorithm.  \newline\newline
 function yAxisValue(Argument x, Argument s) \{ \newline 
 \hspace*{20pt}calculate the value using $value = {s^{x - 1} e^{ - s}}$\newline
 \hspace*{20pt}return value\newline
@@ -186,10 +192,17 @@ end
 
 \end{exampleblock}
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{img/d4_1.png}
-\caption{GUI of Gamma Function}
-\label{fig:GUI of Gamma Function}
+\includegraphics[width=0.6\linewidth]{img/d4_3.png}
+\caption{All Test Cases}
+\label{fig:All Test Cases}
 \end{figure}
+
+\begin{figure}
+\includegraphics[width=0.6\linewidth]{img/d4_4.png}
+\caption{Coding style and Java docs}
+\label{fig:Coding style and Java docs}
+\end{figure}
+
 \begin{exampleblock}{Results}
 \begin{tabular}{|p{5cm}|p{11cm}|p{8cm}|}
 
@@ -246,7 +259,7 @@ end
 
 \begin{exampleblock}{Suggested Improvements and Conclusion}
 \small{
-\textbf{\underline{Improvements}}
+\textbf{\underline{Suggested Improvements}}
 \begin{itemize}
 \item Java docs can be used for test cases to enhance better readability of test cases.
 \item Functions length in few cases can be reduced to 20 to 30 lines to enhance the maintainability.
