@@ -8,7 +8,7 @@
 \documentclass[final]{beamer}
 
 \usepackage[scale=1.24]{beamerposter} % Use the beamerposter package for laying out the poster
-
+\usepackage{mathtools}
 %\usetheme{confposter} % Use the confposter theme supplied with this template
 \usetheme[faculty=phil]{fibeamer} % Uncomment to use Masaryk University's fibeamer theme instead.
 
@@ -250,19 +250,26 @@ end
 %	CONCLUSION
 %----------------------------------------------------------------------------------------
 
-\begin{exampleblock}{Explicit Efforts}
-\small{For this project, GUI is used to increase usability with proper exception handling to increase robustness. To enhance maintainability, Design pattern is used. Even each method has different functionality to decrease dependability. Core method of integration is implemented for gamma function which enhances efficiency and correctness.}
+\begin{exampleblock}{Explicit Efforts and Critical Decisions}
+\small{For this project, GUI is used to increase usability with proper exception handling to increase robustness. To enhance maintainability, Design pattern is used. Even each method has different functionality to decrease dependability. Core method of integration is implemented for gamma function which enhances efficiency and correctness. 
+\textbf{\underline{Critical Decisions}}
+\begin{itemize}
+\item \textbf{Taylor series} is used instead of \textbf{Math.log} = $\sum_{n=1}^{+\infty} (((x-1)/(x+1))^{2n-1})/(2n-1)$
+\item \textbf{Taylor series} is used instead of \textbf{Math.exp} = $\sum_{n=0}^{+\infty} x^n/n!$
+\item For Math.round, String.format function is used.
+\end{itemize}
+All this implementations of taylor series instead of internal math functions help to understand and learn the way of implementing every thing from scratch.
+}
 
 
 \end{exampleblock}
 
 
-\begin{exampleblock}{Suggested Improvements and Conclusion}
+\begin{exampleblock}{\small{Suggested Improvements and Conclusion}}
 \small{
 \textbf{\underline{Suggested Improvements}}
 \begin{itemize}
-\item Java docs can be used for test cases to enhance better readability of test cases.
-\item Functions length in few cases can be reduced to 20 to 30 lines to enhance the maintainability.
+\item Java docs can be used for test cases to enhance better readability of test cases. Functions length in few cases can be reduced to 20 to 30 lines to enhance the maintainability.
 \item More arithmetic functions like addition, subtraction can be added to cover all aspects of calculator.
 \end{itemize}
 Concluding that, this project has increased the way of handling project along with proper documentation and proper coding style. It also helps in working in a team. Not only that, it also helps to maintain track of working using git, and requirement gathering at initial stage is mandatory.}
@@ -275,8 +282,6 @@ Concluding that, this project has increased the way of handling project along wi
 \small{\begin{itemize}
 \item  https://www.ncbi.nlm.nih.gov/pmc/articles/PMC 4247832/
 \item https://medium.com/cantors-paradise/the-riemann-hypothesis-explained-fa01c1f75d3f
-\item https://www.quora.com/What-are-the-advantages-of-Eclipse-IDE
-\item https://checkstyle.org/eclipse-cs/
 \item https://www.eclipse.org/forums/index.php/t/206312/
 \end{itemize}}
 \end{exampleblock}
@@ -286,8 +291,6 @@ Concluding that, this project has increased the way of handling project along wi
 \begin{block}{Contact Information}
 
 \small{\begin{itemize}
-\item Name: Amit Sachdeva
-\item Student Id: 40084627
 \item Github: \url{https://github.com/amitsachdeva45/SEPPersonal/tree/master/Documentation/Deliverable4}
 \item Professor: P. Kamthan
 \end{itemize}}
